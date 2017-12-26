@@ -38,4 +38,8 @@ class PageController extends Controller
         $products = Product::where('category_id', $category->id)->get();
         return view('page.product', compact('category', 'products'));
     }
+    public function getMap()
+    {
+        return view('page.map');
+    }
 }

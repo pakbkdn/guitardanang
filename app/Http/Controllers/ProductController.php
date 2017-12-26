@@ -42,6 +42,7 @@ class ProductController extends Controller
             'image.required' => 'Vui lòng chọn ảnh sản phẩm'
         ]);
         $data = new Product;
+
         $data->category_id = $rq->input('category');
         $data ->name = $rq->input('name');
         $data->alias = str_slug($rq->input('name'));
