@@ -165,7 +165,7 @@ a:focus {
     content: "\f0e0";
 }
 .phone:before {
-    content: "\f095";
+    /* content: "\f095"; */
 }
 .login:before {
     content: "\f13e";

@@ -57,12 +57,57 @@
                                           </span>
                                      @endif
                                     <div class="form-group">
-                                        <label>Ảnh</label>
+                                        <label>Hình Đại diện</label>
                                         <input type="file" name="image">
                                     </div>
                                     @if ($errors->has('image'))
                                           <span class="help-block" style="color:red;">
                                               <strong>{{ $errors->first('image') }}</strong>
+                                          </span>
+                                     @endif
+                                    <div class="form-group">
+                                        <label>Hình liên quan</label>
+                                        <input name="image-rel" id="file-input" type="file" multiple><br>
+                                        <div id="preview"></div>
+                                        <script type="text/javascript">
+                                            function previewImages() {
+
+                                            var preview = document.querySelector('#preview');
+
+                                            if (this.files) {
+                                            [].forEach.call(this.files, readAndPreview);
+                                            }
+
+                                            function readAndPreview(file) {
+
+                                            // Make sure `file.name` matches our extensions criteria
+                                            if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                                              return alert(file.name + " is not an image");
+                                            } // else...
+
+                                            var reader = new FileReader();
+
+                                            reader.addEventListener("load", function() {
+                                              var image = new Image();
+                                              image.height = 90;
+                                              image.width = 120;
+                                              image.title  = file.name;
+                                              image.src    = this.result;
+                                              preview.appendChild(image);
+                                            }, false);
+
+                                            reader.readAsDataURL(file);
+
+                                            }
+
+                                            }
+
+                                            document.querySelector('#file-input').addEventListener("change", previewImages, false);
+                                        </script>
+                                    </div>
+                                    @if ($errors->has('image-rel'))
+                                          <span class="help-block" style="color:red;">
+                                              <strong>{{ $errors->first('image-rel') }}</strong>
                                           </span>
                                      @endif
                                     <div class="form-group">
@@ -90,4 +135,17 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        <script type="text/javascript">
+            document.getElementById("image-rel").onchange = function () {
+               var reader = new FileReader();
+
+               reader.onload = function (e) {
+                   // get loaded data and render thumbnail.
+                   document.getElementById("image-rel1").src = e.target.result;
+               };
+
+               // read the image file as a data URL.
+               reader.readAsDataURL(this.files[0]);
+               };
+        </script>
 @stop

@@ -66,4 +66,8 @@ class PageController extends Controller
         $result_search = new LengthAwarePaginator($currentPageSearchResults, count($col), $perPage, $currentPage,['path' => LengthAwarePaginator::resolveCurrentPath()] );
         return view('page.search_sp')->with(['result_search'=>$result_search->appends(Input::except('page')),'products'=>$products,'key'=>$key, 'result'=>$result]);
     }
+    public function getMap()
+    {
+        return view('page.map');
+    }
 }
