@@ -2,7 +2,7 @@
 @section('content')
     <div class="main">
         <div class="breadcrumbs">
-            <div class="container">
+            <div class="">
                 <ul class="breadcrumb">
                     <li><a href="#">Trang chủ</a></li>
                     <li class="active">@if(isset($category)){{$category->name}}@else Sản phẩm @endif</li>

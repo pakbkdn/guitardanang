@@ -1,0 +1,38 @@
+.logo_header{
+    height: 40px;
+}
+#phone-shop {
+    float: left;
+    margin-top: 35px;
+    margin-right: 5px;
+    padding-left: 30px;
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    height: 35px;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#phone-shop .phone {
+    float: right;
+    color: #ff1000;
+}
+.fa-volume-control-phone:before {
+    content: "";
+}
+#phone-shop .fa {
+    zoom: 1.7;
+    color: #ff1000;
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    animation: phone .5s ease-in-out infinite;
+    -moz-animation: phone .5s ease-in-out infinite;
+    -webkit-animation: phone .5s ease-in-out infinite;
+}

@@ -1,13 +1,13 @@
 <div class="header">
     <div class="topbar">
         <div class="container">
-            <marquee><p style="color: white;">Chào mừng bạn đến với Guitar Đà Nẵng ! Địa chỉ: 189 Thái Thị Bôi - Thanh Khê - Đà Nẵng.</p></marquee>
+            <marquee><p style="color: white; margin:15px;">Chào mừng bạn đến với Guitar Đà Nẵng ! Địa chỉ: 189 Thái Thị Bôi - Thanh Khê - Đà Nẵng.</p></marquee>
         </div><!-- /.container -->
     </div><!-- /.topbar -->
     <div class="header-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 logo_header">
                     <a href="{{url('/')}}" class="logo"><img src="{{asset('images/logo.png')}}" alt=""></a>
                 </div>
                 <div class="col-md-9">
@@ -15,6 +15,10 @@
                         <input type="text" class="input-text" name="q" id="search" placeholder="Tìm kiếm sản phẩm...">
                         <button type="submit" class="btn btn-danger"><span class="fa fa-search"></span></button>
                     </form>
+                    <div id="phone-shop">
+                        <i class="fa fa-volume-control-phone"></i><label class="phone"> Hotline: 098.679.8008</label>
+                    </div>
+
                 </div>
             </div>
             <div class="row">
@@ -32,6 +36,8 @@
                 </div>
             </div>
         </div>
+
+<!-- header show md -->
         <nav class="navbar navbar-primary navbar-static-top hidden-lg hidden-md">
             <div class="container">
                 <div class="navbar-header">

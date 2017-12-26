@@ -215,9 +215,8 @@ a:focus {
     border-bottom: 3px solid #d8373e;
 }
 .logo {
-    padding: 55px 0;
+    padding: 40px 0;
     display: block;
-    border-right: 1px solid #d9d9d9;
 }
 .support-client {
     margin-top: 25px;
@@ -264,7 +263,8 @@ a:focus {
     border: 2px solid #d8373e;
     position: relative;
     float: left;
-    margin-bottom: 25px;
+    margin: 25px 0;
+    margin-left: -30px;
 }
 .form-search input.input-text {
     background-color: transparent;
@@ -425,7 +425,6 @@ a:focus {
 .menu {
     list-style: none;
     padding: 0;
-    border: 1px solid #d9d9d9;
     border-bottom: 0;
     border-left: 0;
     margin: 0;
@@ -433,6 +432,7 @@ a:focus {
 }
 .menu > li {
     float: left;
+    border: 1px solid #d9d9d9;
 }
 .menu > li > a {
     display: block;
