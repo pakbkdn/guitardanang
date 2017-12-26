@@ -17,7 +17,7 @@
                                     {!!csrf_field()!!}
                                     <div class="form-group">
                                         <label>Tên thể loại</label>
-                                        <input  class="form-control"  name="name">{{old('name')}}
+                                        <input  class="form-control"  name="name" value="{{old('name')}}">
                                         @if ($errors->has('name'))
                                               <span class="help-block" style="color:red;">
                                                   <strong>{{ $errors->first('name') }}</strong>

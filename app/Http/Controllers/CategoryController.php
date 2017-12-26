@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function listCategory()
     {
-        $categories = Category::All();
+        $categories = Category::orderBy('id', 'desc')->get();
         return view('admin.category.list-category', compact('categories'));
     }
 

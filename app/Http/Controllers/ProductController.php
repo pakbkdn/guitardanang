@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function listProduct()
     {
-        $products = Product::All();
+        $products = Product::orderBy('id', 'desc')->get();
         return view('admin.product.list-product', compact('products'));
     }
 
@@ -24,7 +24,23 @@ class ProductController extends Controller
     }
 
     public function postAddProduct(request $rq)
-    {
+    { $this->validate($rq,
+        [
+            'category' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'sale' => 'required',
+            'image' => 'required',
+        ],
+        [
+            'category.required' => 'Vui lòng chọn thể loại',
+            'name.required' => 'Vui lòng nhập tên sản phẩm',
+            'description.required' => 'Vui lòng nhập mô tả',
+            'price.required' => 'Vui lòng nhập giá gốc',
+            'sale.required' => 'Vui lòng nhập giá sale',
+            'image.required' => 'Vui lòng chọn ảnh sản phẩm'
+        ]);
         $data = new Product;
         $data->category_id = $rq->input('category');
         $data ->name = $rq->input('name');
@@ -54,6 +70,19 @@ class ProductController extends Controller
 
     public function postEditProduct(request $rq, $id)
     {
+        $this->validate($rq,
+            [
+                'name' => 'required',
+                'description' => 'required',
+                'price' => 'required',
+                'sale' => 'required',
+            ],
+            [
+                'name.required' => 'Vui lòng nhập tên sản phẩm',
+                'description.required' => 'Vui lòng nhập mô tả',
+                'price.required' => 'Vui lòng nhập giá gốc',
+                'sale.required' => 'Vui lòng nhập giá sale',
+            ]);
         $data = Product::find($id);
         $data->category_id = $rq->input('category');
         $data ->name = $rq->input('name');

@@ -18,32 +18,62 @@
                                     <div class="form-group">
                                         <label>Thể loại</label>
                                         <select class="form-control" name="category">
-                                            <option>Chọn thể loại</option>
+                                            <option value="">Chọn thể loại</option>
                                             @foreach($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
+                                    @if ($errors->has('category'))
+                                          <span class="help-block" style="color:red;">
+                                              <strong>{{ $errors->first('category') }}</strong>
+                                          </span>
+                                     @endif
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
-                                        <input class="form-control" name="name">
+                                        <input class="form-control" name="name" value="{{old('name')}}">
                                     </div>
+                                    @if ($errors->has('name'))
+                                          <span class="help-block" style="color:red;">
+                                              <strong>{{ $errors->first('name') }}</strong>
+                                          </span>
+                                     @endif
                                     <div class="form-group">
                                         <label>Giá Gốc</label>
-                                        <input class="form-control" placeholder="Enter text" name="price">
+                                        <input type="number" min="0" class="form-control" name="price" value="{{old('price')}}">
                                     </div>
+                                    @if ($errors->has('price'))
+                                          <span class="help-block" style="color:red;">
+                                              <strong>{{ $errors->first('price') }}</strong>
+                                          </span>
+                                     @endif
                                     <div class="form-group">
                                         <label>Giá Sale</label>
-                                        <input class="form-control" placeholder="Enter text" name="sale">
+                                        <input type="number" min="0"  class="form-control" name="sale" value="{{old('sale')}}">
                                     </div>
+                                    @if ($errors->has('sale'))
+                                          <span class="help-block" style="color:red;">
+                                              <strong>{{ $errors->first('sale') }}</strong>
+                                          </span>
+                                     @endif
                                     <div class="form-group">
                                         <label>Ảnh</label>
                                         <input type="file" name="image">
                                     </div>
+                                    @if ($errors->has('image'))
+                                          <span class="help-block" style="color:red;">
+                                              <strong>{{ $errors->first('image') }}</strong>
+                                          </span>
+                                     @endif
                                     <div class="form-group">
                                         <label>Mô tả sản phẩm</label>
-                                        <textarea class="form-control" rows="3" name="description"></textarea>
+                                        <textarea class="form-control" rows="3" name="description" >{{old('description')}}</textarea>
                                     </div>
+                                    @if ($errors->has('description'))
+                                          <span class="help-block" style="color:red;">
+                                              <strong>{{ $errors->first('description') }}</strong>
+                                          </span>
+                                     @endif
 
                                     <button type="submit" class="btn btn-default">Lưu</button>
                                     <button type="reset" class="btn btn-default">Reset</button>

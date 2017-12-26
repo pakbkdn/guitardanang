@@ -12,7 +12,7 @@ class PageController extends Controller
 {
     public function getIndex()
     {
-        $new_products = Product::orderBy('created_at', 'desc')->limit(10)->get();
+        $new_products = Product::orderBy('id', 'desc')->limit(10)->get();
         $sale_products = Product::whereColumn('sale', '<', 'price' )->limit(10)->get();
         $slides = Slide::All();
         return view('page.index', compact('new_products', 'sale_products','slides'));
