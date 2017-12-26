@@ -16,7 +16,7 @@
                         <button type="submit" class="btn btn-danger"><span class="fa fa-search"></span></button>
                     </form>
                     <div id="phone-shop">
-                        <i class="fa fa-volume-control-phone"></i><label class="phone"> Hotline: 098.679.8008</label>
+                        <i class="fa fa-volume-control-phone"></i><label class="phone"> Hotline: 0905.930.937</label>
                     </div>
 
                 </div>
@@ -31,7 +31,7 @@
                         <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span> Giới thiệu</a></li>
                         <li><a href="{{url('san-pham')}}"><span class="glyphicon glyphicon-music"></span> Sản Phẩm</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-phone"></span> Liên hệ</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-globe"></span> Bản đồ</a></li>
+                        <li><a href="{{url('ban-do')}}"><span class="glyphicon glyphicon-globe"></span> Bản đồ</a></li>
                     </ul>
                 </div>
             </div>
