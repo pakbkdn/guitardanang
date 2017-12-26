@@ -2,7 +2,7 @@
 @section('content')
 <div class="main">
     <div class="breadcrumbs">
-        <div class="container">
+        <div class="">
             <ul class="breadcrumb">
                 <li><a href="url('/')">Trang chủ</a></li>
                 <li><a href="#">{{$detail->category->name}}</a></li>
