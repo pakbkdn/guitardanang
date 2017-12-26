@@ -165,7 +165,7 @@ a:focus {
     content: "\f0e0";
 }
 .phone:before {
-    content: "\f095";
+    /* content: "\f095"; */
 }
 .login:before {
     content: "\f13e";
@@ -215,7 +215,7 @@ a:focus {
     border-bottom: 3px solid #d8373e;
 }
 .logo {
-    padding: 40px 0;
+    padding: 27px 26px;
     display: block;
 }
 .support-client {
@@ -263,20 +263,19 @@ a:focus {
     border: 2px solid #d8373e;
     position: relative;
     float: left;
-    margin: 25px 0;
+    margin: 17px 0;
     margin-left: -30px;
 }
 .form-search input.input-text {
     background-color: transparent;
-    ;
     border: 0 none;
     color: #d8373e;
     float: left;
     font-weight: 700;
     font-size: 16px;
-    height: 54px;
+    height: 36px;
     line-height: 34px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     width: 450px;
 }
 .form-search input.input-text::-moz-placeholder {
@@ -317,9 +316,9 @@ a:focus {
     margin-top: 2px;
 }
 .form-search .btn {
-    font-size: 22px;
-    padding: 12px 19px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 22px;
+    height: 38px;
 }
 .mini-cart {
     float: right;
@@ -469,6 +468,7 @@ a:focus {
     background-color: #d8373e;
     color: #fff;
     cursor: pointer;
+    margin-top: 1px;
 }
 .mega-menu-title h3 {
     font-size: 18px;
