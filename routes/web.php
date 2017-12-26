@@ -15,6 +15,7 @@ Route::get('/', 'PageController@getIndex');
 Route::get('san-pham', 'PageController@getProduct');
 Route::get('danh-muc/{alias}', 'PageController@getCategory');
 Route::get('san-pham/{alias}', 'PageController@getDetail');
+Route::get('timkiem-sp', 'PageController@searchsp');
 
 Route::get('ad-guitardn', 'AdminController@dashboard');
 

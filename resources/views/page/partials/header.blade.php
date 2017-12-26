@@ -11,8 +11,8 @@
                     <a href="{{url('/')}}" class="logo"><img src="{{asset('images/logo.png')}}" alt=""></a>
                 </div>
                 <div class="col-md-9">
-                    <form class="form-search" style="">
-                        <input type="text" class="input-text" name="q" id="search" placeholder="Tìm kiếm sản phẩm...">
+                    <form class="form-search" style="" method="GET" action="timkiem-sp">
+                        <input type="text" class="input-text" name="key_search" id="search" value="{{ isset($_GET['key_search']) ? $_GET['key_search'] : ''}}" placeholder="Tìm kiếm sản phẩm..." >
                         <button type="submit" class="btn btn-danger"><span class="fa fa-search"></span></button>
                     </form>
                     <div id="phone-shop">
