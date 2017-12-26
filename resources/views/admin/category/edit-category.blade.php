@@ -18,6 +18,11 @@
                                     <div class="form-group">
                                         <label>Tên thể loại</label>
                                         <input class="form-control" name="name" value="{{$category->name}}">
+                                        @if ($errors->has('name'))
+                                              <span class="help-block" style="color:red;">
+                                                  <strong>{{ $errors->first('name') }}</strong>
+                                              </span>
+                                         @endif
                                     </div>
                                     <button type="submit" class="btn btn-default">Lưu</button>
                                     <button type="reset" class="btn btn-default">Reset</button>

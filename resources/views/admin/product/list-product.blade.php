@@ -31,10 +31,10 @@
                                 @foreach($products as $index=>$product)
                                 <tr class="odd gradeX">
                                     <td>{{$index+1}}</td>
-                                    <td>{{$product->name}}</td>
+                                    <td><a href="{{url('san-pham/'.$product->alias)}}" target="_blank">{{$product->name}}</a></td>
                                     <td>{{number_format($product->price)}} đ</td>
                                     <td>{{number_format($product->sale)}} đ</td>
-                                    <td class="center">{{$product->image}}</td>
+                                    <td  class="center"><img style="height: 40px; width: 50px; " src="{{asset('images/products/'.$product->image)}}" alt="{{$product->image}}"></td>
                                     <td class="center"><a href="{{url('ad-guitardn/sua-san-pham/'.$product->id)}}"><span class="glyphicon glyphicon-edit"></span></a></td>
                                     <td class="center"><a href="{{url('ad-guitardn/xoa-san-pham/'.$product->id)}}" onclick="return confirm('Bạn chắc chắn muốn xóa ?');"><span class="glyphicon glyphicon-trash"></a></td>
                                 </tr>
