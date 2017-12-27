@@ -16,6 +16,7 @@ Route::get('san-pham', 'PageController@getProduct');
 Route::get('danh-muc/{alias}', 'PageController@getCategory');
 Route::get('san-pham/{alias}', 'PageController@getDetail');
 Route::get('timkiem-sp', 'PageController@searchsp');
+Route::get('news/rander/public/save', 'PageController@updateArtisan');
 Route::get('ban-do', 'PageController@getMap');
 
 Route::group(['prefix' => 'ad-guitardn'], function(){
