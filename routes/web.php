@@ -15,6 +15,7 @@ Route::get('/', 'PageController@getIndex');
 Route::get('san-pham', 'PageController@getProduct');
 Route::get('danh-muc/{alias}', 'PageController@getCategory');
 Route::get('san-pham/{alias}', 'PageController@getDetail');
+Route::get('timkiem-sp', 'PageController@searchsp');
 Route::get('ban-do', 'PageController@getMap');
 
 Route::group(['prefix' => 'ad-guitardn'], function(){
@@ -34,3 +35,7 @@ Route::group(['prefix' => 'ad-guitardn'], function(){
     Route::post('sua-the-loai/{id}', 'CategoryController@postEditCategory');
     Route::get('xoa-the-loai/{id}', 'CategoryController@deleteCategory');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -3,7 +3,7 @@
 }
 #phone-shop {
     float: left;
-    margin-top: 35px;
+    margin-top: 20px;
     margin-right: 5px;
     padding-left: 30px;
     font-size: 20px;
@@ -23,10 +23,8 @@
     float: right;
     color: #ff1000;
 }
-.fa-volume-control-phone:before {
-    content: "";
-}
-#phone-shop .fa {
+
+#phone-shop .glyphicon {
     zoom: 1.7;
     color: #ff1000;
     transform: rotate(-25deg);
@@ -36,3 +34,19 @@
     -moz-animation: phone .5s ease-in-out infinite;
     -webkit-animation: phone .5s ease-in-out infinite;
 }
+@keyframes phone {
+    0% {
+    transform: scale(1) rotate(-25deg);
+    -webkit-transform: scale(1) rotate(-25deg);
+    -moz-transform: scale(1) rotate(-25deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(0);
+        -webkit-transform: scale(1.2) rotate(0);
+        -moz-transform: scale(1.2) rotate(0);
+    }
+    100% {
+        transform: scale(1) rotate(-25deg);
+        -webkit-transform: scale(1) rotate(-25deg);
+        -moz-transform: scale(1) rotate(-25deg);
+    }
