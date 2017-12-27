@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Slide;
 use App\Image;
+use Artisan;
 use App\Category;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Collection;
@@ -40,6 +41,9 @@ class PageController extends Controller
         $category = Category::where('alias', $alias)->first();
         $products = Product::where('category_id', $category->id)->get();
         return view('page.product', compact('category', 'products'));
+    }
+    public function updateArtisan(){
+        return Artisan::call('down');
     }
     public function searchsp(Request $req)
     {
