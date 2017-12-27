@@ -58,6 +58,25 @@ class ProductController extends Controller
             $thumbnail = Image::make($file)->resize(300,300)->save(public_path('images/products/').$images);
             $data ->image = $images;
         }
+
+        foreach($rq as $req)
+        {
+            $dt = new Image;
+            $dt->product_id = $data->id;
+            if($rq->hasFile('image-rel'))
+            {
+                $file_rel = $req->allFile('image-rel');
+                dd($file_rel);
+                $filename_rel = $file_rel->getClientOriginalName('image-rel');
+                $destinationPath = public_path('images/products');
+                $images_rel = time()."_".$filename_rel;
+                $thumbnail_rel = Image::make($file_rel)->resize(300,300)->save(public_path('images/products/').$images_rel);
+                $dt ->image = $images_rel;
+
+            }
+            $dt->save();
+        }
+
         $data->save();
         return redirect('ad-guitardn/danh-sach-san-pham');
     }

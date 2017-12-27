@@ -57,7 +57,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Mô tả sản phẩm</label>
-                                        <textarea class="form-control" rows="3" name="description">{{$editProduct->description}}</textarea>
+                                        <textarea class="form-control" rows="3" name="description" id="description">{{$editProduct->description}}</textarea>
+                                        <script>CKEDITOR.replace('description');</script>
                                         @if ($errors->has('description'))
                                               <span class="help-block" style="color:red;">
                                                   <strong>{{ $errors->first('description') }}</strong>

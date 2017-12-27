@@ -69,41 +69,6 @@
                                         <label>Hình liên quan</label>
                                         <input name="image-rel" id="file-input" type="file" multiple><br>
                                         <div id="preview"></div>
-                                        <script type="text/javascript">
-                                            function previewImages() {
-
-                                            var preview = document.querySelector('#preview');
-
-                                            if (this.files) {
-                                            [].forEach.call(this.files, readAndPreview);
-                                            }
-
-                                            function readAndPreview(file) {
-
-                                            // Make sure `file.name` matches our extensions criteria
-                                            if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
-                                              return alert(file.name + " is not an image");
-                                            } // else...
-
-                                            var reader = new FileReader();
-
-                                            reader.addEventListener("load", function() {
-                                              var image = new Image();
-                                              image.height = 60;
-                                              image.width = 60;
-                                              image.title  = file.name;
-                                              image.src    = this.result;
-                                              preview.appendChild(image);
-                                            }, false);
-
-                                            reader.readAsDataURL(file);
-
-                                            }
-
-                                            }
-
-                                            document.querySelector('#file-input').addEventListener("change", previewImages, false);
-                                        </script>
                                     </div>
                                     @if ($errors->has('image-rel'))
                                           <span class="help-block" style="color:red;">
@@ -112,7 +77,8 @@
                                      @endif
                                     <div class="form-group">
                                         <label>Mô tả sản phẩm</label>
-                                        <textarea class="form-control" rows="3" name="description" >{{old('description')}}</textarea>
+                                        <textarea class="form-control" rows="3" name="description" id="description" >{{old('description')}}</textarea>
+                                        <script>CKEDITOR.replace('description');</script>
                                     </div>
                                     @if ($errors->has('description'))
                                           <span class="help-block" style="color:red;">
@@ -147,5 +113,41 @@
                // read the image file as a data URL.
                reader.readAsDataURL(this.files[0]);
                };
+        </script>
+
+        <script type="text/javascript">
+            function previewImages() {
+
+            var preview = document.querySelector('#preview');
+
+            if (this.files) {
+            [].forEach.call(this.files, readAndPreview);
+            }
+
+            function readAndPreview(file) {
+
+            // Make sure `file.name` matches our extensions criteria
+            if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+              return alert(file.name + " is not an image");
+            } // else...
+
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function() {
+              var image = new Image();
+              image.height = 60;
+              image.width = 60;
+              image.title  = file.name;
+              image.src    = this.result;
+              preview.appendChild(image);
+            }, false);
+
+            reader.readAsDataURL(file);
+
+            }
+
+            }
+
+            document.querySelector('#file-input').addEventListener("change", previewImages, false);
         </script>
 @stop
