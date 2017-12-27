@@ -121,9 +121,9 @@
                         <li>
                             <a href="{{url('ad-guitardn/danh-sach-san-pham')}}"><i class="fa fa-edit fa-fw"></i> Sản phẩm </a>
                         </li>
-                        <!-- <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Quản trị viên</a>
-                        </li> -->
+                        <li>
+                            <a href="{{url('ad-guitardn/slides')}}"><i class="fa fa-sliders  fa-fw"></i> Slides</a>
+                        </li>
 
                     </ul>
                 </div>
