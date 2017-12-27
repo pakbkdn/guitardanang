@@ -4,29 +4,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-4 hidden-sm hidden-xs">
-                    <div class="subscribe">
-                        <div class="subscribe-inner">
-                            <h3>Sign up for newsletter</h3>
-                            Duis autem vel eum iriureDuis autem vel eum
-                        </div>
-                    </div>
+
                 </div>
-                <div class="col-md-5 col-sm-8">
-                    <form method="post" class="form-inline form-subscribe">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="newsletter" name="email">
-                        </div>
-                        <button class="btn btn-danger" title="Subscribe" type="submit">Subscribe</button>
-                    </form>
-                </div>
-                <div class="col-md-3 col-sm-4">
-                    <ul class="social">
+                <div class="col-md-4 col-sm-8">
+                    <!-- <ul class="social">
                         <li><a href="#" class="face">face</a></li>
                         <li><a href="#" class="google">google</a></li>
-                        <li><a href="#" class="twitter">twitter</a></li>
                         <li><a href="#" class="youtube">youtube</a></li>
-                        <li><a href="#" class="linkedin">linkedin</a></li>
-                    </ul>
+                    </ul> -->
+                </div>
+                <div class="col-md-4 col-sm-4">
+
                 </div>
             </div>
         </div>
@@ -34,64 +22,50 @@
     <div class="footer-middle">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="footer-title">
-                        <h2>contact us</h2>
+                        <h2>liên hệ</h2>
                     </div>
                     <div class="footer-content">
                         <div class="email add">
-                            <p>Support@plazathemes.com</p>
+                            <p>Email: sun86nguyen@gmail.com</p>
                         </div>
                         <div class="phone add">
-                            <p>(800) 0123 456 789</p>
+                            <p>Số điện thoại : 0905.930.937</p>
                         </div>
-                        <div class="address add">Address:
-                            <p>1234 - Bandit Tringi lAliquam Vitae. New York</p>
+                        <div class="address add">Địa chỉ:
+                            <p>189 Thái Thị Bôi - Tp Đà Nẵng</p>
                         </div>
-                        <div class="contact-link"><a href="#" class="btn btn-default">Open in Google Maps</a></div>
+                        <div class="contact-link"><a href="https://www.google.com/maps/place/189+Th%C3%A1i+Th%E1%BB%8B+B%C3%B4i,+Thanh+Kh%C3%AA,+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam/@16.0684581,108.1936293,17z/data=!3m1!4b1!4m5!3m4!1s0x3142185484c7c637:0xdfcaff155e497d8a!8m2!3d16.068476!4d108.195818" class="btn btn-default" target="_blank">Google Maps</a></div>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="footer-title">
-                        <h2>MY ACCOUNT</h2>
+                        <h2>Danh mục sản phẩm</h2>
                     </div>
                     <div class="footer-content">
                         <ul>
-                            <li><a href="#">Sitemap</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Your Account</a></li>
-                            <li><a href="#">Advanced Search</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            @foreach($categories as $category)
+                            <li><a href="#">{{$category->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="footer-title">
-                        <h2>Payment &amp; Shipping</h2>
+                <div class="col-sm-4">
+                    <div class="fb-page" data-href="https://www.facebook.com/GuitarDanang189ThaiThiBoi/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/GuitarDanang189ThaiThiBoi/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/GuitarDanang189ThaiThiBoi/">Guitar Đà Nẵng</a>
+                        </blockquote>
                     </div>
-                    <div class="footer-content">
-                        <ul>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Shipping Guide</a></li>
-                            <li><a href="#">Locations We Ship To</a></li>
-                            <li><a href="#">Estimated Delivery Time</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="footer-title">
-                        <h2>Customer Service</h2>
-                    </div>
-                    <div class="footer-content">
-                        <ul>
-                            <li><a href="#">Shipping Policy</a></li>
-                            <li><a href="#">Compensation First</a></li>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Return Policy</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11&appId=222636254944151';
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                    </script>
                 </div>
             </div>
         </div>
@@ -100,7 +74,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="copy">Copyright &copy; 2015 Plazathemes. All Rights Reserved</div>
+                    <div class="copy">Copyright &copy; 2017 guitardanang.net. All Rights Reserved</div>
                 </div>
                 <div class="col-sm-6">
                     <div class="payment"><img src="images/payment.png" alt="" class="img-responsive"></div>

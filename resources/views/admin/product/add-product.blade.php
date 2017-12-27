@@ -89,8 +89,8 @@
 
                                             reader.addEventListener("load", function() {
                                               var image = new Image();
-                                              image.height = 90;
-                                              image.width = 120;
+                                              image.height = 60;
+                                              image.width = 60;
                                               image.title  = file.name;
                                               image.src    = this.result;
                                               preview.appendChild(image);

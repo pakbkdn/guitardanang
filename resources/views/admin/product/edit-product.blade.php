@@ -16,7 +16,7 @@
                                 <form role="form" method="post" action="{{url('ad-guitardn/sua-san-pham/'.$editProduct->id)}}" enctype="multipart/form-data">
                                     {!!csrf_field()!!}
                                     <div class="form-group">
-                                        <label>Thể loại</label>
+                                        <label>Chọn Thể loại</label>
                                         <select class="form-control" name="category">
                                             <option value="">Chọn thể loại</option>
                                             @foreach($categories as $category)
