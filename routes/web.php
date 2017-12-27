@@ -35,6 +35,11 @@ Route::group(['prefix' => 'ad-guitardn'], function(){
     Route::get('sua-the-loai/{id}', 'CategoryController@getEditCategory');
     Route::post('sua-the-loai/{id}', 'CategoryController@postEditCategory');
     Route::get('xoa-the-loai/{id}', 'CategoryController@deleteCategory');
+
+    Route::get('slides', 'SlideController@listSlide');
+    Route::get('them-slide', 'SlideController@getAddSlide');
+    Route::post('them-slide', 'SlideController@postAddSlide');
+    Route::get('delete-slide/{id}', 'SlideController@deleteSlide');
 });
 
 Auth::routes();

@@ -16,7 +16,7 @@
                                 <form role="form" method="post" action="{{url('ad-guitardn/sua-san-pham/'.$editProduct->id)}}" enctype="multipart/form-data">
                                     {!!csrf_field()!!}
                                     <div class="form-group">
-                                        <label>Thể loại</label>
+                                        <label>Chọn Thể loại</label>
                                         <select class="form-control" name="category">
                                             <option value="">Chọn thể loại</option>
                                             @foreach($categories as $category)
@@ -57,7 +57,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Mô tả sản phẩm</label>
-                                        <textarea class="form-control" rows="3" name="description">{{$editProduct->description}}</textarea>
+                                        <textarea class="form-control" rows="3" name="description" id="description">{{$editProduct->description}}</textarea>
+                                        <script>CKEDITOR.replace('description');</script>
                                         @if ($errors->has('description'))
                                               <span class="help-block" style="color:red;">
                                                   <strong>{{ $errors->first('description') }}</strong>

@@ -70,9 +70,10 @@
                 </div>
             </div><!-- /.product-tab -->
         </div><!-- /.product-view -->
-    <div class="featuredproductslider-container">
-                    <div class="title-group1"><h2>Sản phẩm liên quan</h2></div>
-                    <div id="featured-products" class="owl-container">
+        <div class="featuredproductslider-container">
+            @if(isset($relatives))
+            <div class="title-group1"><h2>Sản phẩm liên quan</h2></div>
+            <div id="featured-products" class="owl-container">
                         <div class="owl">
                             @foreach($relatives as $relative)
                             <div class='productslider-item item'>
@@ -110,6 +111,7 @@
                             @endforeach
                         </div>
                     </div>
-                </div><!-- /.featuredproductslider-container -->
+            @endif        
+        </div><!-- /.featuredproductslider-container -->
 </div><!-- /.main -->
 @stop
