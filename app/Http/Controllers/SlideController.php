@@ -37,6 +37,27 @@ class SlideController extends Controller
         return redirect('ad-guitardn/slides');
     }
 
+    public function getEditSlide($id)
+    {
+        $slide = Slide::find($id);
+        return view('admin.slide.edit-slide', compact('slide'));
+    }
+
+    public function postEditSlide(request $rq,$id)
+    {
+        $data = Slide::find($id);
+        if($rq->hasFile('slide'))
+        {
+            $file = $rq->file('slide');
+            $name = time()."_".$file->getClientOriginalName();
+            $destinationPath = public_path('images/slider');
+            $file->move($destinationPath ,$name);
+            $data ->name = $name;
+        }
+        $data ->update();
+        return redirect('ad-guitardn/slides');
+    }
+
     public function deleteSlide($id)
     {
         $deleteSlide = Slide::find($id);

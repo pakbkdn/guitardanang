@@ -67,7 +67,7 @@
                                      @endif
                                     <div class="form-group">
                                         <label>Hình liên quan</label>
-                                        <input name="image-rel" id="file-input" type="file" multiple><br>
+                                        <input name="image-rel[]" id="file-input" type="file" multiple><br>
                                         <div id="preview"></div>
                                     </div>
                                     @if ($errors->has('image-rel'))
