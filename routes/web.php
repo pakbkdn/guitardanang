@@ -39,6 +39,8 @@ Route::group(['prefix' => 'ad-guitardn'], function(){
     Route::get('slides', 'SlideController@listSlide');
     Route::get('them-slide', 'SlideController@getAddSlide');
     Route::post('them-slide', 'SlideController@postAddSlide');
+    Route::get('sua-slide/{id}', 'SlideController@getEditSlide');
+    Route::post('sua-slide/{id}', 'SlideController@postEditSlide');
     Route::get('delete-slide/{id}', 'SlideController@deleteSlide');
 });
 

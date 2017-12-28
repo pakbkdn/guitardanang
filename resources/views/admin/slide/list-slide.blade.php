@@ -29,7 +29,7 @@
                                 <tr>
                                     <td>{{$index+1 }}</td>
                                     <td><img style="height: 50px; width: 100px;" src="{{asset('images/slider/'.$slide->name)}}" alt=""> </td>
-                                    <td><a href="#"><span class="glyphicon glyphicon-edit"></span></a> </td>
+                                    <td><a href="{{url('ad-guitardn/sua-slide/'.$slide->id)}}"><span class="glyphicon glyphicon-edit"></span></a> </td>
                                     <td><a href="{{url('ad-guitardn/delete-slide/'.$slide->id)}}" onclick="return confirm('Bạn chắc chắn muốn xóa ?');"><span class="glyphicon glyphicon-trash"></a> </td>
                                 </tr>
                                 @endforeach

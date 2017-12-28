@@ -18,6 +18,7 @@ class CreatImagesTable extends Migration
             $table->string('image');
             $table->integer('product_id')->unsigned()->nullable(); //unsigned:Không âm; nullable:ko rỗng;
             $table->foreign('product_id')->references('id')->on('products');
+            $table->timestamps();
         });
     }
 

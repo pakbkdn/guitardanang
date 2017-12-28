@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Image;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManagerStatic as Image;
 
 
 class ProductController extends Controller
@@ -55,29 +55,26 @@ class ProductController extends Controller
             $filename = $file->getClientOriginalName('image');
             $destinationPath = public_path('images/products');
             $images = time()."_".$filename;
-            $thumbnail = Image::make($file)->resize(300,300)->save(public_path('images/products/').$images);
+            $file->move($destinationPath, $images);
             $data ->image = $images;
         }
-
-        foreach($rq as $req)
-        {
-            $dt = new Image;
-            $dt->product_id = $data->id;
-            if($rq->hasFile('image-rel'))
-            {
-                $file_rel = $req->allFile('image-rel');
-                dd($file_rel);
-                $filename_rel = $file_rel->getClientOriginalName('image-rel');
-                $destinationPath = public_path('images/products');
-                $images_rel = time()."_".$filename_rel;
-                $thumbnail_rel = Image::make($file_rel)->resize(300,300)->save(public_path('images/products/').$images_rel);
-                $dt ->image = $images_rel;
-
-            }
-            $dt->save();
-        }
-
         $data->save();
+
+        $images_rel = array();
+        if($files_rel = $rq->file('image-rel'))
+        {
+            foreach($files_rel as $file_rel)
+            {
+                $dt = new Image;
+                $dt->product_id = $data->id;
+                $name = time()."_".$file_rel->getClientOriginalName();
+                $destinationPath = public_path('images/products');
+                $file_rel->move($destinationPath, $name);
+                $images_rel[]=$name;
+                $dt ->image = $name;
+                $dt ->save();
+            }
+        }
         return redirect('ad-guitardn/danh-sach-san-pham');
     }
 
@@ -128,6 +125,7 @@ class ProductController extends Controller
     public function deleteProduct($id)
     {
         $deleteProduct = Product::find($id);
+        $deleteProduct->images()->delete();
         $deleteProduct->delete();
         return redirect('ad-guitardn/danh-sach-san-pham');
     }
