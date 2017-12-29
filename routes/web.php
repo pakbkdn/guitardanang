@@ -42,6 +42,7 @@ Route::group(['prefix' => 'ad-guitardn'], function(){
     Route::get('sua-slide/{id}', 'SlideController@getEditSlide');
     Route::post('sua-slide/{id}', 'SlideController@postEditSlide');
     Route::get('delete-slide/{id}', 'SlideController@deleteSlide');
+
 });
 
 Auth::routes();

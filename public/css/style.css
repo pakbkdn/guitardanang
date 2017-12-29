@@ -1391,6 +1391,7 @@ a:focus {
 .images-container {
     position: relative;
     overflow: hidden;
+    height: 200px;
 }
 .images-container img {
     max-width: 100%;

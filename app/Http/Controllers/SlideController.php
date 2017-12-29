@@ -20,6 +20,15 @@ class SlideController extends Controller
 
     public function postAddSlide(request $req)
     {
+        $this->validate($req,
+        [
+            'slide' => 'required|max:2000',
+        ],
+        [
+            'slide.required' => 'vui lòng nhập slide',
+            'slide.max' => 'Slide không vượt quá 2000kb',
+
+        ]);
         $images=array();
         if($files = $req -> file('slide'))
         {

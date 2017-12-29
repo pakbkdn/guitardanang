@@ -27,19 +27,21 @@ class ProductController extends Controller
     { $this->validate($rq,
         [
             'category' => 'required',
-            'name' => 'required',
+            'name' => 'required|unique:products',
             'description' => 'required',
             'price' => 'required',
             'sale' => 'required',
-            'image' => 'required',
+            'image' => 'required|max:2000',
         ],
         [
             'category.required' => 'Vui lòng chọn thể loại',
             'name.required' => 'Vui lòng nhập tên sản phẩm',
+            'name.unique' => 'Trùng tên sản phẩm',
             'description.required' => 'Vui lòng nhập mô tả',
             'price.required' => 'Vui lòng nhập giá gốc',
             'sale.required' => 'Vui lòng nhập giá sale',
-            'image.required' => 'Vui lòng chọn ảnh sản phẩm'
+            'image.required' => 'Vui lòng chọn ảnh sản phẩm',
+            'image.max' => 'Hình đại diện không vượt quá 2000kb',
         ]);
         $data = new Product;
 
@@ -93,12 +95,14 @@ class ProductController extends Controller
                 'description' => 'required',
                 'price' => 'required',
                 'sale' => 'required',
+                'image' => 'max:2000'
             ],
             [
                 'name.required' => 'Vui lòng nhập tên sản phẩm',
                 'description.required' => 'Vui lòng nhập mô tả',
                 'price.required' => 'Vui lòng nhập giá gốc',
                 'sale.required' => 'Vui lòng nhập giá sale',
+                'image.max' => 'Ảnh đại diện không được quá 2000kb'
             ]);
         $data = Product::find($id);
         if($rq->input('category') != null)
@@ -116,7 +120,10 @@ class ProductController extends Controller
             $filename = $file->getClientOriginalName('image');
             $destinationPath = public_path('images/products');
             $images = time()."_".$filename;
-            $thumbnail = Image::make($file)->resize(300,300)->save(public_path('images/products/').$images);
+            // $thumbnail = Image::make($file)->resize(300,300)->save(public_path('images/products/').$images);
+            $file->move($destinationPath, $images);
+            $oldfile = $data->image;
+            Storage::delete($oldfile);
             $data ->image = $images;
         }
         $data->update();
@@ -125,8 +132,21 @@ class ProductController extends Controller
     public function deleteProduct($id)
     {
         $deleteProduct = Product::find($id);
+        $deleteImages = Image::where('product_id', $id)->get();
+        foreach($deleteImages as $deleteImage)
+        {
+            $oldImage = $deleteImage->image;
+            Storage::delete($oldImage);
+        }
+
+        $oldfile = $deleteProduct->image;
+        Storage::delete($oldfile);
+
         $deleteProduct->images()->delete();
         $deleteProduct->delete();
+
+
         return redirect('ad-guitardn/danh-sach-san-pham');
     }
+
 }
