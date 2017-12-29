@@ -22,6 +22,7 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/jquery-ui.css')}}" rel="stylesheet">
     <link href="{{asset('css/common.css')}}" rel="stylesheet">
+    
 </head>
 <body>
     @include('page.partials.header')
@@ -338,5 +339,7 @@
     var iid3 = "countbox_3";
     CountBack_slider(gsecs3,"countbox_3", 3);
 </script>
+
+
 </body>
 </html>

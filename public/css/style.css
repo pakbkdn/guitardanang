@@ -1391,6 +1391,7 @@ a:focus {
 .images-container {
     position: relative;
     overflow: hidden;
+    height: 200px;
 }
 .images-container img {
     max-width: 100%;
@@ -2311,6 +2312,13 @@ a:focus {
 }
 .productslider-item {
     margin-bottom: 30px;
+}
+.productslider-item img{
+    transition: 0.5s;
+}
+
+.productslider-item img:hover{
+    transform: scale(1.1);
 }
 .product_icon {
     position: absolute;

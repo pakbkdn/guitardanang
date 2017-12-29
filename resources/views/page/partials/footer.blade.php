@@ -46,7 +46,7 @@
                     <div class="footer-content">
                         <ul>
                             @foreach($categories as $category)
-                            <li><a href="#">{{$category->name}}</a></li>
+                            <li><a href="{{url('danh-muc/'.$category->alias)}}">{{$category->name}}</a></li>
                             @endforeach
                         </ul>
                     </div>

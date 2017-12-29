@@ -30,17 +30,29 @@ class PageController extends Controller
 
     public function getDetail($alias)
     {
-        $detail = Product::where('alias', $alias)->first();
-        $thumbnails = Image::where('product_id', $detail->id)->get();
-        $relatives = Product::where('category_id', $detail->category->id)->get();
-        return view('page.detail', compact('detail','thumbnails', 'relatives'));
+        if($detail = Product::where('alias', $alias)->first())
+        {
+            $thumbnails = Image::where('product_id', $detail->id)->get();
+            $relatives = Product::where('category_id', $detail->category->id)->get();
+            return view('page.detail', compact('detail','thumbnails', 'relatives'));
+        }
+        elseif($detail = Product::where('alias','<>', $alias)->first())
+        {
+            return view('errors.404');
+        }
     }
 
     public function getCategory($alias)
     {
-        $category = Category::where('alias', $alias)->first();
-        $products = Product::where('category_id', $category->id)->get();
-        return view('page.product', compact('category', 'products'));
+        if($category = Category::where('alias', $alias)->first())
+        {
+            $products = Product::where('category_id', $category->id)->get();
+            return view('page.product', compact('category', 'products'));
+        }
+        elseif($category = Category::where('alias', '<>', $alias)->first())
+        {
+            return view('errors.404');
+        }
     }
     public function updateArtisan(){
         return Artisan::call('down');
