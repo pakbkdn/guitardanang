@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Toastr;
 
 
 class CategoryController extends Controller
@@ -33,6 +34,7 @@ class CategoryController extends Controller
         $addCategory->name = $rq->input('name');
         $addCategory->alias = str_slug($rq->input('name'));
         $addCategory->save();
+        Toastr::success('Tạo Thể loại thành công', $title = null, $options = []);
         return redirect('ad-guitardn/danh-sach-the-loai');
     }
 
@@ -55,6 +57,7 @@ class CategoryController extends Controller
         $editCategory->name = $rq->input('name');
         $editCategory->alias = str_slug($rq->input('name'));
         $editCategory->update();
+        Toastr::success('Chỉnh sửa thể loại thành công', $title = null, $options = []);
         return redirect('ad-guitardn/danh-sach-the-loai');
     }
 
@@ -62,6 +65,7 @@ class CategoryController extends Controller
     {
         $deleteCategory = Category::find($id);
         $deleteCategory->delete();
+        Toastr::success('Xóa thể loại thành công', $title = null, $options = []);
         return redirect('ad-guitardn/danh-sach-the-loai');
     }
 }

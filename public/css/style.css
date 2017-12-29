@@ -2313,6 +2313,13 @@ a:focus {
 .productslider-item {
     margin-bottom: 30px;
 }
+.productslider-item img{
+    transition: 0.5s;
+}
+
+.productslider-item img:hover{
+    transform: scale(1.1);
+}
 .product_icon {
     position: absolute;
     top: 0;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Slide;
+use Toastr;
 
 class SlideController extends Controller
 {
@@ -43,6 +44,7 @@ class SlideController extends Controller
                 $data ->save();
             }
         }
+        Toastr::success('Tạo slide thành công', $title = null, $options = []);
         return redirect('ad-guitardn/slides');
     }
 
@@ -64,6 +66,7 @@ class SlideController extends Controller
             $data ->name = $name;
         }
         $data ->update();
+        Toastr::success('Chỉnh sửa slide thành công', $title = null, $options = []);
         return redirect('ad-guitardn/slides');
     }
 
@@ -71,6 +74,7 @@ class SlideController extends Controller
     {
         $deleteSlide = Slide::find($id);
         $deleteSlide ->delete();
+        Toastr::success('Xóa slide thành công', $title = null, $options = []);
         return redirect('ad-guitardn/slides');
     }
 }

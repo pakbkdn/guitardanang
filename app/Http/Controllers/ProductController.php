@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\Image;
+use Toastr;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -77,6 +78,7 @@ class ProductController extends Controller
                 $dt ->save();
             }
         }
+        Toastr::success('Tạo sản phẩm thành công', $title = null, $options = []);
         return redirect('ad-guitardn/danh-sach-san-pham');
     }
 
@@ -127,6 +129,7 @@ class ProductController extends Controller
             $data ->image = $images;
         }
         $data->update();
+        Toastr::success('Chỉnh sửa sản phẩm thành công', $title = null, $options = []);
         return redirect('ad-guitardn/danh-sach-san-pham');
     }
     public function deleteProduct($id)
@@ -145,7 +148,7 @@ class ProductController extends Controller
         $deleteProduct->images()->delete();
         $deleteProduct->delete();
 
-
+        Toastr::success('Xóa sản phẩm thành công', $title = null, $options = []);
         return redirect('ad-guitardn/danh-sach-san-pham');
     }
 
