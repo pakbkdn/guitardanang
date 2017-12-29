@@ -24,7 +24,7 @@
                             @foreach($thumbnails as $thumbnail)
                             <li class="thumbnail-item">
                                 <a href="images/thumbnails/1.jpg" class="cloud-zoom-gallery" title="" name="images/products/1.jpg" rel="useZoom: 'ma-zoom1', smallImage: '{{asset('images/thumbnails/1.jpg')}}'">
-                                    <img src="{{asset('images/thumbnails/'.$thumbnail->image)}}" alt="" />
+                                    <img src="{{asset('images/products/'.$thumbnail->image)}}" alt="" />
                                 </a>
                             </li>
                             @endforeach
@@ -111,7 +111,7 @@
                             @endforeach
                         </div>
                     </div>
-            @endif        
+            @endif
         </div><!-- /.featuredproductslider-container -->
 </div><!-- /.main -->
 @stop
