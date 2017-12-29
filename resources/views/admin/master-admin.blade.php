@@ -49,11 +49,14 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 </head>
 
 <body>
-
+    {!! Toastr::render() !!}
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -72,7 +75,7 @@
             <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" >
-                                    <p>Hello</p>
+                                    <p>  </p>
                         </a>
                         <!-- /.dropdown-messages -->
                     </li>
@@ -82,12 +85,12 @@
                             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="{{url('administrator/user/profile')}}"><i class="fa fa-user fa-fw"></i> Edit Profile</a>
+                            <li><a href="{{url('ad-guitardn/user/profile')}}"><i class="fa fa-user fa-fw"></i> Chỉnh sửa thông tin</a>
                             </li>
-                            <li><a href="{{url('administrator/user/changepass')}}"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                            <li><a href="{{url('ad-guitardn/user/changepass')}}"><i class="fa fa-gear fa-fw"></i> thay đổi mật khẩu</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="{{url('administrator/user/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <li><a href="{{url('ad-guitardn/user/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Đăng Xuất</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
