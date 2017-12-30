@@ -1,7 +1,7 @@
 <div class="header">
     <div class="topbar">
         <div class="container">
-            <marquee><p style="color: white; margin:15px;">Chào mừng bạn đến với Guitar Đà Nẵng ! Địa chỉ: 189 Thái Thị Bôi - Thanh Khê - Đà Nẵng.</p></marquee>
+            <marquee><p style="color: white; margin:15px;">Chào mừng quý khách hàng đến với Guitar Đà Nẵng ! Địa chỉ: 189 Thái Thị Bôi - Thanh Khê - Đà Nẵng.</p></marquee>
         </div><!-- /.container -->
     </div><!-- /.topbar -->
     <div class="header-bottom">
@@ -29,10 +29,10 @@
                 <div class="col-md-9">
                     <ul class="menu clearfix visible-lg visible-md">
                         <li> <a href="{{url('/')}}"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span> Giới thiệu</a></li>
+                        <li><a href="{{url('gioi-thieu')}}"><span class="glyphicon glyphicon-folder-open"></span> Giới thiệu</a></li>
                         <li><a href="{{url('san-pham')}}"><span class="glyphicon glyphicon-music"></span> Sản Phẩm</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-phone"></span> Liên hệ</a></li>
-                        <li><a href="{{url('ban-do')}}"><span class="glyphicon glyphicon-globe"></span> Bản đồ</a></li>
+                        <li><a href="{{url('lien-he')}}"><span class="glyphicon glyphicon-phone"></span> Liên hệ</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-thumbs-up"></span> Cảm ơn !</a></li>
                     </ul>
                 </div>
             </div>

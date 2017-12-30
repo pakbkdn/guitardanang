@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <head>
     <meta charset="utf-8">
-    <title>Guitar Đà Nẵng shop - 189 Thái Thị Bôi, Đà Nẵng</title>
+    <title>Guitar Đà Nẵng-Chuyên nhạc cụ Âm Thanh : Đàn guitar , đàn điện , loa , piano , phụ kiện vv....</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -22,7 +22,11 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/jquery-ui.css')}}" rel="stylesheet">
     <link href="{{asset('css/common.css')}}" rel="stylesheet">
-    
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
     @include('page.partials.header')
@@ -44,9 +48,11 @@
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/jquery.nivo.slider.pack.js')}}"></script>
 <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/cloud-zoom.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('js/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/jquery.bxslider.min.js')}}"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function(){
