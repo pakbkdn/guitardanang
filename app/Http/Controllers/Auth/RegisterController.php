@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'ad-guitardn';
 
     /**
      * Create a new controller instance.
@@ -54,14 +54,14 @@ class RegisterController extends Controller
             'password_confirmation' => 'required|same:password'
         ],
         [
-            'username.required' => 'Please, enter the name',
-            'email.required' => 'Please enter the email',
-            'email.email' => 'Incorrect email format',
-            'email.unique' => 'Email has users',
-            'password.required' => 'Please, enter password',
-            'password_confirmation.required' => 'Please, confirm password',
-            'password_confirmation.same' => 'Passwords are not the same',
-            'password.min' => 'Passwords are at least 6 characters long'
+            'username.required' => 'vui lòng nhập tên',
+            'email.required' => 'Vui lòng nhập mật khẩu',
+            'email.email' => 'định dạng này không phải Email, vui lòng kiểm tra lại',
+            'email.unique' => 'Email này đã có người sử dụng',
+            'password.required' => 'Vui lòng nhập mật khẩu',
+            'password_confirmation.required' => 'vui lòng xác nhận mật khẩu',
+            'password_confirmation.same' => 'Mật khẩu xác nhận không khớp',
+            'password.min' => 'Mật khẩu phải nhiều hơn 6 kí tự'
 
     ]);
     }
