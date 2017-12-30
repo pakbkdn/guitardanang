@@ -84,6 +84,10 @@ class PageController extends Controller
     }
     public function getMap()
     {
-        return view('page.map');
+        return view('page.contact');
+    }
+    public function intro()
+    {
+        return view('page.intro');
     }
 }
