@@ -20,10 +20,17 @@ Route::get('news/rander/public/save', 'PageController@updateArtisan');
 Route::get('lien-he', 'PageController@getMap');
 Route::get('gioi-thieu', 'PageController@intro');
 
+Route::group(['prefix' =>'user', 'middleware'=>'Login'], function(){
+    Route::get('/logout', 'UserController@logout');
+    Route::get('/profile', 'UserController@updateProfile' );
+    Route::post('/editprofile/{id}', 'UserController@save');
+	Route::get('/changepass', 'UserController@chagepass');
+	Route::post('/change-password', 'UserController@savepass');
+});
 
 
-Route::group(['prefix' => 'ad-guitardn', 'middleware'=>'Login'], function(){
-    Route::get('/', 'AdminController@dashboard');
+Route::get('ad-guitardn', 'AdminController@dashboard')->name('ad-guitardn')->middleware('Login');
+Route::group(['prefix' => 'ad-guitardn', 'middleware'=>'Admin'], function(){
     Route::get('danh-sach-san-pham', 'ProductController@listProduct');
     Route::get('them-san-pham', 'ProductController@getAddProduct');
     Route::post('them-san-pham', 'ProductController@postAddProduct');
@@ -46,13 +53,12 @@ Route::group(['prefix' => 'ad-guitardn', 'middleware'=>'Login'], function(){
     Route::get('delete-slide/{id}', 'SlideController@deleteSlide');
 
 
-    Route::group(['prefix' => 'user'], function(){
-        Route::get('/logout', 'UserController@logout');
-        Route::get('/profile', 'UserController@updateProfile' );
-        Route::post('/editprofile/{id}', 'UserController@save');
-		Route::get('/changepass', 'UserController@chagepass');
-		Route::post('/change-password', 'UserController@savepass');
-    });
+
+    Route::group(['prefix'=>'manage_user'], function(){
+    Route::get('/list_user', 'ManageUserController@listUser')->name('manageUser');
+    Route::get('/changeroles/{id}','ManageUserController@changeRoles');
+    Route::post('/editusers/{id}','ManageUserController@saveRoles');
+});
 });
 
 Auth::routes();

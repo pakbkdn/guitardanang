@@ -73,9 +73,10 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                @if(Auth::user())
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" >
-                                    <p>  </p>
+                            <p>Xin chào: {{auth()->user()->username}}</p>
                         </a>
                         <!-- /.dropdown-messages -->
                     </li>
@@ -85,17 +86,18 @@
                             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="{{url('ad-guitardn/user/profile')}}"><i class="fa fa-user fa-fw"></i> Chỉnh sửa thông tin</a>
+                            <li><a href="{{url('user/profile')}}"><i class="fa fa-user fa-fw"></i> Chỉnh sửa thông tin</a>
                             </li>
-                            <li><a href="{{url('ad-guitardn/user/changepass')}}"><i class="fa fa-gear fa-fw"></i> thay đổi mật khẩu</a>
+                            <li><a href="{{url('user/changepass')}}"><i class="fa fa-gear fa-fw"></i> thay đổi mật khẩu</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="{{url('ad-guitardn/user/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Đăng Xuất</a>
+                            <li><a href="{{url('user/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Đăng Xuất</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
                     <!-- /.dropdown -->
+                @endif
             </ul>
             <!-- /.navbar-top-links -->
             <div class="navbar-default sidebar" role="navigation">
@@ -114,6 +116,9 @@
                         </li>
                         <li>
                             <a href="{{url('/')}}" target="_blank"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="{{url('ad-guitardn/manage_user/list_user')}}" ><i class="fa fa-user fa-fw"></i>User</a>
                         </li>
                         <li>
                             <a href="{{url('ad-guitardn')}}"><i class="fa fa-dashboard fa-fw"></i> Thống kê</a>
