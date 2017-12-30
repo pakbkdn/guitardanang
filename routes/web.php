@@ -28,7 +28,7 @@ Route::group(['prefix' =>'user', 'middleware'=>'Login'], function(){
 });
 
 
-Route::get('ad-guitardn', 'AdminController@dashboard')->name('ad-guitardn');
+Route::get('ad-guitardn', 'AdminController@dashboard')->name('ad-guitardn')->middleware('Login');
 Route::group(['prefix' => 'ad-guitardn', 'middleware'=>'Admin'], function(){
     Route::get('danh-sach-san-pham', 'ProductController@listProduct');
     Route::get('them-san-pham', 'ProductController@getAddProduct');
