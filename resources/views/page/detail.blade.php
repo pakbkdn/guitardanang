@@ -4,7 +4,7 @@
     <div class="breadcrumbs">
         <div class="">
             <ul class="breadcrumb">
-                <li><a href="url('/')">Trang chủ</a></li>
+                <li><a href="{{url('/')}}">Trang chủ</a></li>
                 <li><a href="#">{{$detail->category->name}}</a></li>
                 <li class="active">{{$detail->name}}</li>
             </ul>
@@ -66,7 +66,7 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="product-desc">
-                    {{$detail->description}}
+                    {!!$detail->description!!}
                 </div>
             </div><!-- /.product-tab -->
         </div><!-- /.product-view -->
@@ -113,5 +113,6 @@
                     </div>
             @endif
         </div><!-- /.featuredproductslider-container -->
+    </div>
 </div><!-- /.main -->
 @stop

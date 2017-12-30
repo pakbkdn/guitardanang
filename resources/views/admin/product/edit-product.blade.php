@@ -15,6 +15,7 @@
                             <div class="col-lg-8">
                                 <form role="form" method="post" action="{{url('ad-guitardn/sua-san-pham/'.$editProduct->id)}}" enctype="multipart/form-data">
                                     {!!csrf_field()!!}
+
                                     <div class="form-group">
                                         <label>Chọn Thể loại</label>
                                         <select class="form-control" name="category">
@@ -24,6 +25,7 @@
                                             @endforeach
                                         </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
                                         <input class="form-control" name="name" value="{{$editProduct->name}}">
@@ -33,6 +35,7 @@
                                               </span>
                                          @endif
                                     </div>
+
                                     <div class="form-group">
                                         <label>Giá Gốc</label>
                                         <input class="form-control" placeholder="Enter text" name="price" value="{{$editProduct->price}}">
@@ -42,6 +45,7 @@
                                               </span>
                                          @endif
                                     </div>
+
                                     <div class="form-group">
                                         <label>Giá Sale</label>
                                         <input class="form-control" placeholder="Enter text" name="sale" value="{{$editProduct->sale}}">
@@ -51,10 +55,19 @@
                                               </span>
                                          @endif
                                     </div>
+
                                     <div class="form-group">
                                         <label>Ảnh</label>
-                                        <input type="file" name="image">
+                                        <input type="file" name="image" id="image"><br>
+                                        <img alt="" id="image1" style="width: 100px; height: 100px;">
+                                        @if ($errors->has('image'))
+                                              <span class="help-block" style="color:red;">
+                                                  <strong>{{ $errors->first('image') }}</strong>
+                                              </span>
+                                         @endif
                                     </div>
+
+
                                     <div class="form-group">
                                         <label>Mô tả sản phẩm</label>
                                         <textarea class="form-control" rows="3" name="description" id="description">{{$editProduct->description}}</textarea>
@@ -81,4 +94,17 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        <script type="text/javascript">
+            document.getElementById("image").onchange = function () {
+               var reader = new FileReader();
+
+               reader.onload = function (e) {
+                   // get loaded data and render thumbnail.
+                   document.getElementById("image1").src = e.target.result;
+               };
+
+               // read the image file as a data URL.
+               reader.readAsDataURL(this.files[0]);
+               };
+        </script>
 @stop

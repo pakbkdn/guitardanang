@@ -113,7 +113,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{{url('/')}}"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                            <a href="{{url('/')}}" target="_blank"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
                         </li>
                         <li>
                             <a href="{{url('ad-guitardn')}}"><i class="fa fa-dashboard fa-fw"></i> Thống kê</a>

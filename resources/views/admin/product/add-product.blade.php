@@ -58,7 +58,8 @@
                                      @endif
                                     <div class="form-group">
                                         <label>Hình Đại diện</label>
-                                        <input type="file" name="image">
+                                        <input type="file" name="image" id="image"><br>
+                                        <img alt="" id="image1" style="width: 100px; height: 100px;">
                                     </div>
                                     @if ($errors->has('image'))
                                           <span class="help-block" style="color:red;">
@@ -102,12 +103,12 @@
         </div>
         <!-- /.row -->
         <script type="text/javascript">
-            document.getElementById("image-rel").onchange = function () {
+            document.getElementById("image").onchange = function () {
                var reader = new FileReader();
 
                reader.onload = function (e) {
                    // get loaded data and render thumbnail.
-                   document.getElementById("image-rel1").src = e.target.result;
+                   document.getElementById("image1").src = e.target.result;
                };
 
                // read the image file as a data URL.
