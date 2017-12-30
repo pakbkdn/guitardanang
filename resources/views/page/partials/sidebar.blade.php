@@ -13,7 +13,7 @@
     </div>
 </div>
 <br><br>
-<div class="fb-page" data-href="https://www.facebook.com/GuitarDanang189ThaiThiBoi/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+<div class="fb-page nxpface" data-href="https://www.facebook.com/GuitarDanang189ThaiThiBoi/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
     <blockquote cite="https://www.facebook.com/GuitarDanang189ThaiThiBoi/" class="fb-xfbml-parse-ignore">
         <a href="https://www.facebook.com/GuitarDanang189ThaiThiBoi/">Guitar Đà Nẵng</a>
     </blockquote>
