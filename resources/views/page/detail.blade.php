@@ -15,15 +15,15 @@
             <div class="col-sm-5">
                 <div class="product-img-box">
                     <p class="product-image">
-                        <a href="#" class="cloud-zoom" id="ma-zoom1">
-                            <img src="{{asset('images/products/'.$detail->image)}}" alt="Fusce aliquam" title="Fusce aliquam" />
+                        <a href="{{asset('images/products/'.$detail->image)}}" class="cloud-zoom" id="ma-zoom1">
+                            <img src="{{asset('images/products/'.$detail->image)}}" alt="Fusce aliquam" title="{{$detail->name}}" />
                         </a>
                     </p>
                     <div class="more-views thumbnail-container">
                         <ul class="bxslider">
                             @foreach($thumbnails as $thumbnail)
                             <li class="thumbnail-item">
-                                <a href="images/thumbnails/1.jpg" class="cloud-zoom-gallery" title="" name="images/products/1.jpg" rel="useZoom: 'ma-zoom1', smallImage: '{{asset('images/thumbnails/1.jpg')}}'">
+                                <a href="{{asset('images/products/'.$thumbnail->image)}}" class="cloud-zoom-gallery" title="{{$detail->name}}" name="{{asset('images/products/'.$thumbnail->image)}}" rel="useZoom: 'ma-zoom1', smallImage: '{{asset('images/products/'.$thumbnail->image)}}'">
                                     <img src="{{asset('images/products/'.$thumbnail->image)}}" alt="" />
                                 </a>
                             </li>
@@ -31,6 +31,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
             <div class="product-shop col-sm-7">
                 <div class="product-name">
@@ -115,4 +116,5 @@
         </div><!-- /.featuredproductslider-container -->
     </div>
 </div><!-- /.main -->
+
 @stop

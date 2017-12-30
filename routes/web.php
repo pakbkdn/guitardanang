@@ -17,7 +17,8 @@ Route::get('danh-muc/{alias}', 'PageController@getCategory');
 Route::get('san-pham/{alias}', 'PageController@getDetail');
 Route::get('timkiem-sp', 'PageController@searchsp');
 Route::get('news/rander/public/save', 'PageController@updateArtisan');
-Route::get('ban-do', 'PageController@getMap');
+Route::get('lien-he', 'PageController@getMap');
+Route::get('gioi-thieu', 'PageController@intro');
 
 Route::group(['prefix' =>'user', 'middleware'=>'Login'], function(){
     Route::get('/logout', 'UserController@logout');
