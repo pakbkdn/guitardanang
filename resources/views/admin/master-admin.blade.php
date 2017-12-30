@@ -118,7 +118,7 @@
                             <a href="{{url('/')}}" target="_blank"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
                         </li>
                         <li>
-                            <a href="{{url('ad-guitardn/manage_user/list_user')}}" ><i class="fa fa-user fa-fw"></i>User</a>
+                            <a href="{{url('ad-guitardn/manage_user/list_user')}}" ><i class="fa fa-user fa-fw"></i>Quản trị viên</a>
                         </li>
                         <li>
                             <a href="{{url('ad-guitardn')}}"><i class="fa fa-dashboard fa-fw"></i> Thống kê</a>

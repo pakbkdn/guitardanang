@@ -7,6 +7,8 @@ use App\Product;
 use App\Category;
 use App\Image;
 use Toastr;
+use Intervention\Image\ImageManagerStatic as Images;
+use Intervention\Image\ImageManagerStatic as Imagess;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -58,7 +60,8 @@ class ProductController extends Controller
             $filename = $file->getClientOriginalName('image');
             $destinationPath = public_path('images/products');
             $images = time()."_".$filename;
-            $file->move($destinationPath, $images);
+            // $file->move($destinationPath, $images);
+            $thumbnail = Images::make($file)->resize(500,600)->save(public_path('images/products/').$images);
             $data ->image = $images;
         }
         $data->save();
@@ -72,7 +75,8 @@ class ProductController extends Controller
                 $dt->product_id = $data->id;
                 $name = time()."_".$file_rel->getClientOriginalName();
                 $destinationPath = public_path('images/products');
-                $file_rel->move($destinationPath, $name);
+                // $file_rel->move($destinationPath, $name);
+                $thumbnail_rel = Images::make($file_rel)->resize(500,600)->save(public_path('images/products/').$name);
                 $images_rel[]=$name;
                 $dt ->image = $name;
                 $dt ->save();

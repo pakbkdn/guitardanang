@@ -30,6 +30,7 @@
                             @endforeach
                         </ul>
                     </div>
+
                 </div>
 
             </div>
@@ -54,23 +55,24 @@
                         </p>
                     </div>
                 </div>
-                <div class="short-description">
-                    <div class="std">Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis.</div>
-                </div>
+                <br>
+
                 <p class="availability in-stock">Trạng thái: <span>Còn hàng</span></p>
+
+                <div class="product-tab tab-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#product-desc" data-toggle="tab">MÔ TẢ SẢN PHẨM</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="product-desc">
+                            {!!$detail->description!!}
+                        </div>
+                    </div><!-- /.product-tab -->
+                </div><!-- /.product-view -->
 
             </div><!-- /.product-shop -->
         </div>
-        <div class="product-tab tab-custom">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#product-desc" data-toggle="tab">MÔ TẢ SẢN PHẨM</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="product-desc">
-                    {!!$detail->description!!}
-                </div>
-            </div><!-- /.product-tab -->
-        </div><!-- /.product-view -->
+
         <div class="featuredproductslider-container">
             @if(isset($relatives))
             <div class="title-group1"><h2>Sản phẩm liên quan</h2></div>
