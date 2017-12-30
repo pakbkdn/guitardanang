@@ -50,3 +50,30 @@
         -webkit-transform: scale(1) rotate(-25deg);
         -moz-transform: scale(1) rotate(-25deg);
     }
+}
+@media (max-width: 991px){
+    .logo_header {
+        height: 89px;
+    }
+    .logo {
+        padding: 10px 26px;
+        display: block;
+    }
+    .form-search {
+        width: 100%;
+    }
+    .form-search input.input-text {
+        width: 87%;
+    }
+    #phone-shop {
+        float: left;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    .form-search {
+        margin-left: 0;
+    }
+    .nxpface{
+        display: none !important;
+    }
+}
