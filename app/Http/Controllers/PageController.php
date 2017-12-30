@@ -24,7 +24,7 @@ class PageController extends Controller
 
     public function getProduct()
     {
-        $products = Product::All();
+        $products = Product::orderBy('id', 'desc')->paginate(12);
         return view('page.product', compact('products'));
     }
 
