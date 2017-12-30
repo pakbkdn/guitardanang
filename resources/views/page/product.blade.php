@@ -76,5 +76,8 @@
                 </div>
             </div><!--- /.pager -->
         </div><!-- /.toolbar -->
+        <div class="pagination-box" style="text-align: center;">
+            {{$products->links()}}
+        </div>
     </div><!-- /.main -->
 @stop
