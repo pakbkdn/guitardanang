@@ -46,7 +46,7 @@ class PageController extends Controller
     {
         if($category = Category::where('alias', $alias)->first())
         {
-            $products = Product::where('category_id', $category->id)->get();
+            $products = Product::where('category_id', $category->id)->paginate(12);
             return view('page.product', compact('category', 'products'));
         }
         elseif($category = Category::where('alias', '<>', $alias)->first())
