@@ -54,9 +54,20 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Trang Chủ</a></li>
                         <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Sản Phẩm</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <span class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu">
+                                @foreach($categories as $category)
+                                <li>
+                                    <a href="{{url('/danh-muc/'.$category->alias)}}">{{$category->name}}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </li>
                         <li><a href="#">Liên hệ</a></li>
                         <li><a href="#">Cám ơn</a></li>
+
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
