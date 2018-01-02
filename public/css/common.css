@@ -51,9 +51,10 @@
         -moz-transform: scale(1) rotate(-25deg);
     }
 }
-@media (max-width: 991px){
+@media (max-width: 1200px){
     .logo_header {
         height: 89px;
+        padding: 45px 7px;
     }
     .logo {
         padding: 10px 26px;
@@ -69,11 +70,47 @@
         float: left;
         margin-top: 12px;
         margin-bottom: 12px;
+        margin-bottom: 20px;
+    }
+    .form-search {
+        margin-left: 0;
+    }
+}
+@media (max-width: 991px){
+    .logo_header {
+        height: 89px;
+        padding: 10px;
+    }
+    .logo {
+        padding: 10px 26px;
+        display: block;
+    }
+    .form-search {
+        width: 100%;
+    }
+    .form-search input.input-text {
+        width: 87%;
+    }
+    #phone-shop {
+        float: left;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        margin-bottom: 20px;
     }
     .form-search {
         margin-left: 0;
     }
     .nxpface{
         display: none !important;
+    }
+    element.style {
+        width: 100%;
+        height: auto;
+    }
+    .images-container {
+    height: 345px;
+    }
+    .nivoSlider {
+    height: 230px !important;
     }
 }

@@ -316,6 +316,8 @@ a:focus {
     margin-top: 2px;
 }
 .form-search .btn {
+    position: absolute;
+    right: 0px;
     font-size: 18px;
     line-height: 22px;
     height: 38px;
