@@ -43,7 +43,7 @@ class ProductController extends Controller
             'description.required' => 'Vui lòng nhập mô tả',
             'price.required' => 'Vui lòng nhập giá gốc',
             'sale.required' => 'Vui lòng nhập giá sale',
-            'image.required' => 'Vui lòng chọn ảnh sản phẩm',
+            'image.required' => 'Vui lòng chọn ảnh đại diện',
             'image.max' => 'Hình đại diện không vượt quá 2000kb',
         ]);
         $data = new Product;
@@ -61,7 +61,10 @@ class ProductController extends Controller
             $destinationPath = public_path('images/products');
             $images = time()."_".$filename;
             // $file->move($destinationPath, $images);
-            $thumbnail = Images::make($file)->resize(500,600)->save(public_path('images/products/').$images);
+            $thumbnail = Images::make($file)->resize(500,null, function ($constraint)
+                {
+                    $constraint->aspectRatio();
+                })->save(public_path('images/products/').$images);
             $data ->image = $images;
         }
         $data->save();
@@ -76,7 +79,10 @@ class ProductController extends Controller
                 $name = time()."_".$file_rel->getClientOriginalName();
                 $destinationPath = public_path('images/products');
                 // $file_rel->move($destinationPath, $name);
-                $thumbnail_rel = Images::make($file_rel)->resize(500,600)->save(public_path('images/products/').$name);
+                $thumbnail_rel = Images::make($file_rel)->resize(500,null, function ($constraint)
+                    {
+                        $constraint->aspectRatio();
+                    })->save(public_path('images/products/').$name);
                 $images_rel[]=$name;
                 $dt ->image = $name;
                 $dt ->save();

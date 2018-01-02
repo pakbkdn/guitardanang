@@ -1426,6 +1426,7 @@ a:focus {
 .product-image {
     background: #fff;
     display: block;
+    height: 480px;
 }
 .product-image img {
     width: 100%;

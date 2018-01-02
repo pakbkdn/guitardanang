@@ -5,7 +5,7 @@
         <div class="">
             <ul class="breadcrumb">
                 <li><a href="{{url('/')}}">Trang chủ</a></li>
-                <li><a href="#">{{$detail->category->name}}</a></li>
+                <li><a href="{{url('danh-muc/'.$detail->category->alias)}}">{{$detail->category->name}}</a></li>
                 <li class="active">{{$detail->name}}</li>
             </ul>
         </div>
@@ -118,5 +118,50 @@
         </div><!-- /.featuredproductslider-container -->
     </div>
 </div><!-- /.main -->
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        /* special-offer slider */
+        $("#special-offer .owl").owlCarousel({
+            autoPlay : false,
+            items : 1,
+            itemsDesktop : [1199,1],
+            itemsDesktopSmall : [991,1],
+            itemsTablet: [767,2],
+            itemsMobile : [480,1],
+            slideSpeed : 3000,
+            paginationSpeed : 3000,
+            rewindSpeed : 3000,
+            navigation : true,
+            stopOnHover : true,
+            pagination : false,
+            scrollPerPage:true,
+        });
+        /* featured-products slider */
+        $("#featured-products .owl").owlCarousel({
+            autoPlay : false,
+            items : 4,
+            itemsDesktop : [1199,3],
+            itemsDesktopSmall : [991,2],
+            itemsTablet: [767,2],
+            itemsMobile : [480,1],
+            slideSpeed : 3000,
+            paginationSpeed : 3000,
+            rewindSpeed : 3000,
+            navigation : true,
+            stopOnHover : true,
+            pagination : false,
+            scrollPerPage:true,
+        });
+        /* .thumbnail-container product image slider */
+        $('.thumbnail-container .bxslider').bxSlider({
+            slideWidth: 94,
+            slideMargin: 5,
+            minSlides: 4,
+            maxSlides: 4,
+            pager: false,
+            speed: 500,
+            pause: 3000
+        });
+    });
+</script>
 @stop

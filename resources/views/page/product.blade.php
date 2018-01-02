@@ -4,7 +4,7 @@
         <div class="breadcrumbs">
             <div class="">
                 <ul class="breadcrumb">
-                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="{{url('/')}}">Trang chủ</a></li>
                     <li class="active">@if(isset($category)){{$category->name}}@else Sản phẩm @endif</li>
                 </ul>
             </div>
