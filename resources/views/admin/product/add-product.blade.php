@@ -58,7 +58,7 @@
                                      @endif
                                     <div class="form-group">
                                         <label>Hình Đại diện</label>
-                                        <input type="file" name="image" id="image"><br>
+                                        <input type="file" name="image" id="image" value="{{old('image')}}"><br>
                                         <img alt="" id="image1" style="width: 100px; height: 100px;">
                                     </div>
                                     @if ($errors->has('image'))
@@ -69,7 +69,7 @@
 
                                     <div class="form-group">
                                         <label>Hình liên quan</label>
-                                        <input name="image-rel[]" id="file-input" type="file" multiple><br>
+                                        <input name="image-rel[]" id="file-input" type="file" multiple value="{{old('image_rel')}}"><br>
                                         <div id="preview"></div>
                                     </div>
                                     @if ($errors->has('image-rel'))

@@ -33,7 +33,8 @@ class PageController extends Controller
         if($detail = Product::where('alias', $alias)->first())
         {
             $thumbnails = Image::where('product_id', $detail->id)->get();
-            $relatives = Product::where('category_id', $detail->category->id)->get();
+            $relatives = Product::where('category_id', $detail->category->id)
+                                ->where('alias','<>',$alias)->get();
             return view('page.detail', compact('detail','thumbnails', 'relatives'));
         }
         elseif($detail = Product::where('alias','<>', $alias)->first())
