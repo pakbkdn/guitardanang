@@ -76,4 +76,8 @@
     .nxpface{
         display: none !important;
     }
+    element.style {
+        width: 100%;
+        height: auto;
+    }
 }
